@@ -3,16 +3,34 @@ spring:
     url: jdbc:mysql://localhost:3306/annual_management
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: root
+    password: root1234
+
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     show-sql: true
     properties:
       hibernate:
         format_sql: true
+    defer-datasource-initialization: true
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  sql:
+    init:
+      mode: always
 
 logging:
   level:
     com.example.miniproject: DEBUG
     org.hibernate.type: TRACE
+
+AES:
+  secretKey: 10-rf1f1980f10fj8fuh19f8139
+
+jwt:
+  issuer: 나다나다!!
+  secret_key: fioh1ihjf10fj091jf01hf801fg01
+
